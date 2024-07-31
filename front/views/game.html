@@ -1,20 +1,45 @@
-<html>
-    <head>
-        {{> head}}
-    </head>
-    <body>
-
-        <div id="myBoard" style="width: 700px"></div>
-        <label>Status:</label>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> head}}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #myBoard {
+        padding: 20px;
+      }
+      #status,
+      #pgn {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Шатрын хөлөг</h1>
+      <div id="myBoard" style="width: 700px"></div>
+      <div class="status-container">
+        <label>Төлөв:</label>
         <div id="status"></div>
+      </div>
+      <div class="pgn-container">
         <label>PGN:</label>
         <div id="pgn"></div>
+      </div>
+    </div>
 
-        <script>
-            let playerColor = '{{color}}';
-            console.log('Playing as ' + playerColor);
-        </script>
-        <script src="/public/js/index.js"></script>
-
-    </body>
+    <script>
+      let playerColor = "{{color}}";
+      console.log(playerColor + "Тоглож байна ");
+    </script>
+    <script src="/public/js/index.js"></script>
+  </body>
 </html>
